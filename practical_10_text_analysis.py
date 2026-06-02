@@ -1,8 +1,3 @@
-"""
-Practical 10: Processing and Analyzing Text Data
-POs: PO1, PO2, PO3, PO4, PO5 | KLs: K2, K3, K4, K6
-"""
-
 import re
 import string
 from collections import Counter
@@ -27,7 +22,7 @@ try:
     NLTK_OK = True
 except ImportError:
     NLTK_OK = False
-    print("⚠️  NLTK not installed. Install: pip install nltk")
+    print("NLTK not installed. Install: pip install nltk")
 
 try:
     from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
@@ -35,14 +30,14 @@ try:
     SKLEARN_OK = True
 except ImportError:
     SKLEARN_OK = False
-    print("⚠️  scikit-learn not installed. Install: pip install scikit-learn")
+    print("scikit-learn not installed. Install: pip install scikit-learn")
 
 try:
     from wordcloud import WordCloud
     WC_OK = True
 except ImportError:
     WC_OK = False
-    print("⚠️  wordcloud not installed. Install: pip install wordcloud")
+    print("wordcloud not installed. Install: pip install wordcloud")
 
 plt.rcParams["figure.dpi"] = 100
 sns.set_theme(style="whitegrid")
@@ -149,7 +144,7 @@ ax.barh(words[::-1], counts[::-1], color=sns.color_palette("Blues_d", 20))
 ax.set_title("Top 20 Most Frequent Words"); ax.set_xlabel("Frequency")
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p10_1_word_freq.png", dpi=100); plt.show()
-print("✅ Word frequency chart saved.")
+print("Word frequency chart saved.")
 
 # ── 5. N-grams ──────────────────────────────────────────────────────────────
 print("\n" + "=" * 60)
@@ -208,7 +203,7 @@ if NLTK_OK:
     ax.set_title("NLTK Frequency Distribution – Top 20")
     plt.tight_layout()
     plt.savefig("/mnt/user-data/outputs/p10_2_nltk_freqdist.png", dpi=100); plt.show()
-    print("✅ NLTK frequency distribution saved.")
+    print("NLTK frequency distribution saved.")
 
 # ── 7. TF-IDF ───────────────────────────────────────────────────────────────
 if SKLEARN_OK:
@@ -230,7 +225,7 @@ if SKLEARN_OK:
     ax.set_xlabel("Terms"); ax.set_ylabel("Documents")
     plt.xticks(rotation=45, ha="right"); plt.tight_layout()
     plt.savefig("/mnt/user-data/outputs/p10_3_tfidf.png", dpi=100); plt.show()
-    print("✅ TF-IDF heatmap saved.")
+    print("TF-IDF heatmap saved.")
 
     # ── 8. Cosine Similarity ──────────────────────────────────────────────
     print("\n" + "=" * 60)
@@ -249,7 +244,7 @@ if SKLEARN_OK:
     ax.set_title("Document Cosine Similarity Matrix")
     plt.tight_layout()
     plt.savefig("/mnt/user-data/outputs/p10_4_cosine_sim.png", dpi=100); plt.show()
-    print("✅ Cosine similarity heatmap saved.")
+    print("Cosine similarity heatmap saved.")
 
 # ── 9. Simple Sentiment Analysis (Lexicon-based) ────────────────────────────
 print("\n" + "=" * 60)
@@ -287,7 +282,7 @@ ax.bar(sent_counts.keys(), sent_counts.values(),
 ax.set_title("Sentiment Distribution"); ax.set_ylabel("Count")
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p10_5_sentiment.png", dpi=100); plt.show()
-print("✅ Sentiment chart saved.")
+print("Sentiment chart saved.")
 
 # ── 10. Word Cloud ───────────────────────────────────────────────────────────
 if WC_OK:
@@ -303,7 +298,7 @@ if WC_OK:
     ax.axis("off"); ax.set_title("Word Cloud – Corpus + Reviews", fontsize=14)
     plt.tight_layout()
     plt.savefig("/mnt/user-data/outputs/p10_6_wordcloud.png", dpi=100); plt.show()
-    print("✅ Word cloud saved.")
+    print("Word cloud saved.")
 else:
     print("ℹ️  Skipping word cloud (wordcloud not installed).")
 
@@ -348,6 +343,6 @@ axes[2].tick_params(axis="x", rotation=45)
 
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p10_7_text_stats.png", dpi=100); plt.show()
-print("✅ Text statistics chart saved.")
+print("Text statistics chart saved.")
 
 print("\n✅ Practical 10 Complete! All text analysis outputs saved.")
