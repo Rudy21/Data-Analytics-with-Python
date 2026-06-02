@@ -1,8 +1,3 @@
-"""
-Practical 4: Performing Data Analysis Tasks with NumPy Arrays
-POs: PO1, PO2, PO3, PO4, PO5 | KLs: K1, K2, K3
-"""
-
 import numpy as np
 
 np.random.seed(42)
@@ -197,5 +192,3 @@ print("Top 3 student indices:", toppers)
 print("Subject-wise averages:")
 for s, a in zip(subjects, sub_avg):
     print(f"  {s}: {a}")
-
-print("\n✅ Practical 4 Complete!")
