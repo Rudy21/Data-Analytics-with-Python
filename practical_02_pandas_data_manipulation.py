@@ -1,8 +1,3 @@
-"""
-Practical 2: Data Manipulation Tasks with Pandas
-POs: PO1, PO2, PO3, PO4, PO5 | KLs: K2, K3, K4, K6
-"""
-
 import pandas as pd
 import numpy as np
 
@@ -135,5 +130,3 @@ print("=" * 60)
 pivot = df.pivot_table(values="Salary", index="Department",
                        aggfunc=["mean", "max", "count"])
 print(pivot)
-
-print("\n✅ Practical 2 Complete!")
