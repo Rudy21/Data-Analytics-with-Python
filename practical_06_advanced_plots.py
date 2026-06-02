@@ -1,9 +1,3 @@
-"""
-Practical 6: Creating Advanced and Interactive Plots
-POs: PO1, PO2, PO3, PO4, PO5 | KLs: K2, K3, K4, K6
-Uses: Matplotlib, Seaborn, Plotly
-"""
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -19,8 +13,8 @@ try:
     PLOTLY_AVAILABLE = True
 except ImportError:
     PLOTLY_AVAILABLE = False
-    print("⚠️  Plotly not installed. Run: pip install plotly")
-    print("   Matplotlib/Seaborn advanced plots will still run.\n")
+    print("Plotly not installed. Run: pip install plotly")
+    print("Matplotlib/Seaborn advanced plots will still run.\n")
 
 np.random.seed(42)
 sns.set_theme(style="darkgrid")
@@ -65,7 +59,7 @@ ax.set_xlabel("Month"); ax.set_ylabel("Revenue (₹)")
 ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"₹{v/1e5:.1f}L"))
 ax.legend(); plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p6_1_annotated_line.png", dpi=100); plt.show()
-print("✅ Plot 1: Annotated line chart saved.")
+print("Plot 1: Annotated line chart saved.")
 
 # ── 2. Stacked Bar Chart ────────────────────────────────────────────────────
 fig, axes = plt.subplots(1, 2, figsize=(14, 5))
@@ -79,7 +73,7 @@ axes[1].set_title("Grouped Bar – Department by Gender")
 axes[1].set_xlabel("Department"); axes[1].tick_params(axis="x", rotation=15)
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p6_2_stacked_bar.png", dpi=100); plt.show()
-print("✅ Plot 2: Stacked bar chart saved.")
+print("Plot 2: Stacked bar chart saved.")
 
 # ── 3. Bubble Chart ─────────────────────────────────────────────────────────
 fig, ax = plt.subplots(figsize=(9, 6))
@@ -99,7 +93,7 @@ ax.set_title("Bubble Chart – Avg Experience vs Salary (size = count)")
 ax.set_xlabel("Avg Experience (yrs)"); ax.set_ylabel("Avg Salary (₹)")
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p6_3_bubble.png", dpi=100); plt.show()
-print("✅ Plot 3: Bubble chart saved.")
+print("Plot 3: Bubble chart saved.")
 
 # ── 4. Twin-Axis Plot ───────────────────────────────────────────────────────
 fig, ax1 = plt.subplots(figsize=(10, 5))
@@ -118,7 +112,7 @@ lines2, labels2 = ax2.get_legend_handles_labels()
 ax1.legend(lines1 + lines2, labels1 + labels2, loc="upper left")
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p6_4_twin_axis.png", dpi=100); plt.show()
-print("✅ Plot 4: Twin-axis plot saved.")
+print("Plot 4: Twin-axis plot saved.")
 
 # ── 5. Heatmap (Custom) ─────────────────────────────────────────────────────
 pivot = df.pivot_table(values="Salary", index="Department",
@@ -130,7 +124,7 @@ sns.heatmap(pivot, annot=True, fmt=".0f", cmap="YlOrRd",
 ax.set_title("Avg Salary Heatmap – Department × Gender", fontsize=13)
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p6_5_heatmap.png", dpi=100); plt.show()
-print("✅ Plot 5: Heatmap saved.")
+print("Plot 5: Heatmap saved.")
 
 # ── 6. Seaborn PairPlot ─────────────────────────────────────────────────────
 pair_df = df[["Age", "Salary", "Experience", "Score", "Department"]].sample(80)
@@ -139,7 +133,7 @@ g = sns.pairplot(pair_df, hue="Department", diag_kind="kde",
 g.figure.suptitle("Pair Plot – Numerical Features", y=1.02, fontsize=13)
 g.figure.savefig("/mnt/user-data/outputs/p6_6_pairplot.png", dpi=80, bbox_inches="tight")
 plt.show()
-print("✅ Plot 6: Pair plot saved.")
+print("Plot 6: Pair plot saved.")
 
 # ── 7. Seaborn FacetGrid ────────────────────────────────────────────────────
 g = sns.FacetGrid(df, col="Department", col_wrap=3, height=3.2, sharey=False)
@@ -148,7 +142,7 @@ g.set_axis_labels("Salary (₹)", "Count")
 g.figure.suptitle("Salary Distribution by Department (FacetGrid)", y=1.03)
 g.figure.savefig("/mnt/user-data/outputs/p6_7_facetgrid.png", dpi=100, bbox_inches="tight")
 plt.show()
-print("✅ Plot 7: FacetGrid saved.")
+print("Plot 7: FacetGrid saved.")
 
 # ── 8. Seaborn ClusterMap ────────────────────────────────────────────────────
 corr_data = df[["Age", "Salary", "Experience", "Score"]].corr()
@@ -157,7 +151,7 @@ g = sns.clustermap(corr_data, annot=True, fmt=".2f", cmap="vlag",
 g.figure.suptitle("Cluster Map – Feature Correlations", y=1.03)
 g.figure.savefig("/mnt/user-data/outputs/p6_8_clustermap.png", dpi=100, bbox_inches="tight")
 plt.show()
-print("✅ Plot 8: ClusterMap saved.")
+print("Plot 8: ClusterMap saved.")
 
 # ── 9. Matplotlib Animation ─────────────────────────────────────────────────
 fig, ax = plt.subplots(figsize=(8, 4))
@@ -181,9 +175,9 @@ anim = FuncAnimation(fig, update, frames=len(x_vals),
                      init_func=init, blit=True, interval=20)
 try:
     anim.save("/mnt/user-data/outputs/p6_9_animation.gif", writer="pillow", fps=30)
-    print("✅ Plot 9: Animation saved as GIF.")
+    print("Plot 9: Animation saved as GIF.")
 except Exception as e:
-    print(f"⚠️  Could not save animation ({e}). Install pillow: pip install pillow")
+    print(f"Could not save animation ({e}). Install pillow: pip install pillow")
 plt.show()
 
 # ════════════════════════════════════════════════════════════
@@ -198,7 +192,7 @@ if PLOTLY_AVAILABLE:
                      template="plotly_white")
     fig.update_traces(marker=dict(opacity=0.75))
     fig.write_html("/mnt/user-data/outputs/p6_10_plotly_scatter.html")
-    print("✅ Plot 10: Plotly scatter saved.")
+    print("Plot 10: Plotly scatter saved.")
 
     # ── 11. Plotly Bar (animated over years) ───────────────────────────────
     dept_year = df.groupby(["Year", "Department"])["Salary"].mean().reset_index()
@@ -208,7 +202,7 @@ if PLOTLY_AVAILABLE:
                  range_y=[0, dept_year["Salary"].max() * 1.1],
                  template="plotly_white")
     fig.write_html("/mnt/user-data/outputs/p6_11_plotly_animated_bar.html")
-    print("✅ Plot 11: Plotly animated bar saved.")
+    print("Plot 11: Plotly animated bar saved.")
 
     # ── 12. Plotly Box ──────────────────────────────────────────────────────
     fig = px.box(df, x="Department", y="Salary", color="Gender",
@@ -216,7 +210,7 @@ if PLOTLY_AVAILABLE:
                  title="Salary Distribution – Box Plot (Interactive)",
                  template="plotly_white")
     fig.write_html("/mnt/user-data/outputs/p6_12_plotly_box.html")
-    print("✅ Plot 12: Plotly box plot saved.")
+    print("Plot 12: Plotly box plot saved.")
 
     # ── 13. Plotly Sunburst ─────────────────────────────────────────────────
     fig = px.sunburst(df, path=["Department", "City", "Gender"],
@@ -224,7 +218,7 @@ if PLOTLY_AVAILABLE:
                       title="Salary Hierarchy – Sunburst Chart",
                       color_discrete_sequence=px.colors.qualitative.Set3)
     fig.write_html("/mnt/user-data/outputs/p6_13_plotly_sunburst.html")
-    print("✅ Plot 13: Plotly sunburst saved.")
+    print("Plot 13: Plotly sunburst saved.")
 
     # ── 14. Plotly 3D Scatter ───────────────────────────────────────────────
     fig = px.scatter_3d(df, x="Age", y="Experience", z="Salary",
@@ -232,7 +226,7 @@ if PLOTLY_AVAILABLE:
                         title="3D Scatter – Age / Experience / Salary",
                         opacity=0.7, template="plotly_white")
     fig.write_html("/mnt/user-data/outputs/p6_14_plotly_3d.html")
-    print("✅ Plot 14: Plotly 3D scatter saved.")
+    print("Plot 14: Plotly 3D scatter saved.")
 
     # ── 15. Plotly Heatmap ──────────────────────────────────────────────────
     corr = df[["Age","Salary","Experience","Score"]].corr().round(3)
@@ -245,8 +239,8 @@ if PLOTLY_AVAILABLE:
     fig.update_layout(title="Interactive Correlation Heatmap",
                       template="plotly_white")
     fig.write_html("/mnt/user-data/outputs/p6_15_plotly_heatmap.html")
-    print("✅ Plot 15: Plotly heatmap saved.")
+    print("Plot 15: Plotly heatmap saved.")
 else:
-    print("ℹ️  Skipped Plotly plots (not installed).")
+    print("Skipped Plotly plots (not installed).")
 
-print("\n✅ Practical 6 Complete! All plots saved.")
+print("\nPractical 6 Complete! All plots saved.")
