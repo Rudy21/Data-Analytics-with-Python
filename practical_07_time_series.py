@@ -1,8 +1,3 @@
-"""
-Practical 7: Time Series Data Analysis Using Pandas
-POs: PO1, PO2, PO3, PO4, PO5 | KLs: K1, K2, K3, K4, K5, K6
-"""
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -146,7 +141,7 @@ try:
     fig.suptitle("Seasonal Decomposition (Monthly Resampled)", fontsize=14)
     plt.tight_layout()
     plt.savefig("/mnt/user-data/outputs/p7_decomposition.png", dpi=100); plt.show()
-    print("✅ Decomposition plot saved.")
+    print("Decomposition plot saved.")
 except ImportError:
     print("statsmodels not installed; skipping decomposition.")
 
@@ -170,7 +165,7 @@ ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y-%m"))
 ax.xaxis.set_major_locator(mdates.MonthLocator(interval=6))
 plt.xticks(rotation=30); ax.legend(); plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p7_price_ma.png", dpi=100); plt.show()
-print("✅ Moving average plot saved.")
+print("Moving average plot saved.")
 
 # b) Monthly box-plot (seasonality pattern)
 monthly_df = ts_df[["Stock_Price","Month"]].copy()
@@ -190,7 +185,7 @@ ax.set_title("Monthly Price Distribution (Seasonal Pattern)")
 ax.set_xlabel("Month"); ax.set_ylabel("Price (₹)")
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p7_seasonal_box.png", dpi=100); plt.show()
-print("✅ Seasonal box-plot saved.")
+print("Seasonal box-plot saved.")
 
 # c) Daily returns distribution
 fig, ax = plt.subplots(figsize=(8, 4))
@@ -205,7 +200,7 @@ ax.set_title("Daily Returns Distribution")
 ax.set_xlabel("Return"); ax.set_ylabel("Density")
 ax.legend(); plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p7_returns_dist.png", dpi=100); plt.show()
-print("✅ Returns distribution saved.")
+print("Returns distribution saved.")
 
 # ── 12. Summary Statistics ─────────────────────────────────────────────────
 print("\n" + "=" * 60)
@@ -217,5 +212,3 @@ yearly_summary = ts_df.groupby("Year")["Stock_Price"].agg(
     Pct_75=lambda x: x.quantile(0.75)
 ).round(2)
 print(yearly_summary)
-
-print("\n✅ Practical 7 Complete!")
