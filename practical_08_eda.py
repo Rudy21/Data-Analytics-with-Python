@@ -1,9 +1,3 @@
-"""
-Practical 8: Performing Exploratory Data Analysis (EDA) on a Dataset
-POs: PO1, PO2, PO3, PO4, PO5 | KLs: K1, K2, K3
-Dataset: Titanic (built-in via seaborn)
-"""
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -58,7 +52,7 @@ for i, (col, row) in enumerate(missing_filt.iterrows()):
     ax.text(i, row["Percent"] + 0.3, f"{row['Percent']}%", ha="center", fontsize=9)
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p8_1_missing.png", dpi=100); plt.show()
-print("✅ Missing value chart saved.")
+print("Missing value chart saved.")
 
 # ── 5. Target Variable Analysis ─────────────────────────────────────────────
 print("\n" + "=" * 60)
@@ -92,7 +86,7 @@ for i, col in enumerate(num_cols):
 fig.suptitle("Univariate – Numerical Columns", fontsize=13)
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p8_3_univariate_num.png", dpi=100); plt.show()
-print("✅ Univariate numerical plots saved.")
+print("Univariate numerical plots saved.")
 
 # ── 7. Univariate Analysis – Categorical ───────────────────────────────────
 print("\n" + "=" * 60)
@@ -106,7 +100,7 @@ for ax, col in zip(axes, cat_cols):
 fig.suptitle("Univariate – Categorical Columns", fontsize=13)
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p8_4_univariate_cat.png", dpi=100); plt.show()
-print("✅ Univariate categorical plots saved.")
+print("Univariate categorical plots saved.")
 
 # ── 8. Bivariate Analysis – Survival vs Features ───────────────────────────
 print("\n" + "=" * 60)
@@ -139,7 +133,7 @@ for i, v in enumerate(surv_rate.values):
 fig.suptitle("Bivariate Analysis – Survival vs Features", fontsize=14)
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p8_5_bivariate.png", dpi=100); plt.show()
-print("✅ Bivariate plots saved.")
+print("Bivariate plots saved.")
 
 # ── 9. Correlation Analysis ─────────────────────────────────────────────────
 print("\n" + "=" * 60)
@@ -160,7 +154,7 @@ axes[1].set_title("Feature Correlation with Survival")
 axes[1].set_xlabel("Pearson r")
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p8_6_correlation.png", dpi=100); plt.show()
-print("✅ Correlation plots saved.")
+print("Correlation plots saved.")
 
 # ── 10. Outlier Detection ───────────────────────────────────────────────────
 print("\n" + "=" * 60)
@@ -183,7 +177,7 @@ for ax, col in zip(axes, ["age", "fare"]):
     ax.set_xlabel("Index"); ax.set_ylabel(col)
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p8_7_outliers.png", dpi=100); plt.show()
-print("✅ Outlier plots saved.")
+print("Outlier plots saved.")
 
 # ── 11. Multivariate Analysis ───────────────────────────────────────────────
 print("\n" + "=" * 60)
@@ -202,7 +196,7 @@ axes[1].set_title("Avg Fare by Class and Sex")
 axes[1].set_xlabel("Passenger Class"); axes[1].tick_params(axis="x", rotation=0)
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p8_8_multivariate.png", dpi=100); plt.show()
-print("✅ Multivariate plots saved.")
+print("Multivariate plots saved.")
 
 # ── 12. Pair Plot ───────────────────────────────────────────────────────────
 g = sns.pairplot(df[["survived","age","fare","pclass","sibsp"]].dropna(),
@@ -211,7 +205,7 @@ g = sns.pairplot(df[["survived","age","fare","pclass","sibsp"]].dropna(),
 g.figure.suptitle("Pair Plot", y=1.02)
 g.figure.savefig("/mnt/user-data/outputs/p8_9_pairplot.png", dpi=80, bbox_inches="tight")
 plt.show()
-print("✅ Pair plot saved.")
+print("Pair plot saved.")
 
 # ── 13. EDA Summary ─────────────────────────────────────────────────────────
 print("\n" + "=" * 60)
@@ -228,4 +222,4 @@ print(f"  Avg Age        : {df['age'].mean():.1f} years")
 print(f"  Avg Fare       : ₹{df['fare'].mean():.2f}")
 print(f"  Missing: Age={df['age'].isnull().sum()}, Cabin={df['cabin'].isnull().sum()}")
 
-print("\n✅ Practical 8 Complete! All EDA plots saved.")
+print("\nAll EDA plots saved.")
