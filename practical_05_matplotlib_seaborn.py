@@ -37,7 +37,7 @@ ax.legend()
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p5_1_line_chart.png", dpi=100)
 plt.show()
-print("✅ Plot 1: Line Chart saved.")
+print("Plot 1: Line Chart saved.")
 
 # ── Plot 2: Bar Chart ───────────────────────────────────────────────────────
 fig, axes = plt.subplots(1, 2, figsize=(12, 4))
@@ -58,7 +58,7 @@ axes[1].set_xlabel("Avg Salary (₹)")
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p5_2_bar_chart.png", dpi=100)
 plt.show()
-print("✅ Plot 2: Bar Chart saved.")
+print("Plot 2: Bar Chart saved.")
 
 # ── Plot 3: Histogram ───────────────────────────────────────────────────────
 fig, axes = plt.subplots(1, 2, figsize=(12, 4))
@@ -78,7 +78,7 @@ axes[1].set_ylabel("Density")
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p5_3_histogram.png", dpi=100)
 plt.show()
-print("✅ Plot 3: Histogram saved.")
+print("Plot 3: Histogram saved.")
 
 # ── Plot 4: Scatter Plot ────────────────────────────────────────────────────
 fig, ax = plt.subplots(figsize=(8, 5))
@@ -93,7 +93,7 @@ ax.legend()
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p5_4_scatter.png", dpi=100)
 plt.show()
-print("✅ Plot 4: Scatter Plot saved.")
+print("Plot 4: Scatter Plot saved.")
 
 # ── Plot 5: Pie Chart ───────────────────────────────────────────────────────
 fig, axes = plt.subplots(1, 2, figsize=(12, 5))
@@ -108,7 +108,7 @@ axes[1].set_title("Gender Distribution")
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p5_5_pie_chart.png", dpi=100)
 plt.show()
-print("✅ Plot 5: Pie Chart saved.")
+print("Plot 5: Pie Chart saved.")
 
 # ── Plot 6: Box Plot (Matplotlib) ───────────────────────────────────────────
 fig, ax = plt.subplots(figsize=(8, 5))
@@ -122,7 +122,7 @@ ax.set_ylabel("Salary (₹)")
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p5_6_boxplot.png", dpi=100)
 plt.show()
-print("✅ Plot 6: Box Plot saved.")
+print("Plot 6: Box Plot saved.")
 
 # ── Plot 7: Subplots Grid ───────────────────────────────────────────────────
 fig, axes = plt.subplots(2, 2, figsize=(12, 9))
@@ -144,7 +144,7 @@ axes[1,1].set_title("Gender Split")
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p5_7_dashboard.png", dpi=100)
 plt.show()
-print("✅ Plot 7: Dashboard saved.")
+print("Plot 7: Dashboard saved.")
 
 # ════════════════════════════════════════════════════════════
 # SEABORN PLOTS
@@ -159,7 +159,7 @@ axes[1].set_title("Score by Gender")
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p5_8_sns_histplot.png", dpi=100)
 plt.show()
-print("✅ Plot 8: Seaborn Hist+KDE saved.")
+print("Plot 8: Seaborn Hist+KDE saved.")
 
 # ── Plot 9: Seaborn Box & Violin ────────────────────────────────────────────
 fig, axes = plt.subplots(1, 2, figsize=(14, 5))
@@ -170,7 +170,7 @@ axes[1].set_title("Score Distribution (Violin)")
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p5_9_sns_box_violin.png", dpi=100)
 plt.show()
-print("✅ Plot 9: Box + Violin saved.")
+print("Plot 9: Box + Violin saved.")
 
 # ── Plot 10: Seaborn Scatter (lmplot) ──────────────────────────────────────
 g = sns.lmplot(data=df, x="Experience", y="Salary", hue="Department",
@@ -179,7 +179,7 @@ g.set_axis_labels("Experience (yrs)", "Salary (₹)")
 g.figure.suptitle("Experience vs Salary with Trend Lines", y=1.02)
 g.figure.savefig("/mnt/user-data/outputs/p5_10_sns_lmplot.png", dpi=100, bbox_inches="tight")
 plt.show()
-print("✅ Plot 10: LM Plot saved.")
+print("Plot 10: LM Plot saved.")
 
 # ── Plot 11: Seaborn Count Plot ─────────────────────────────────────────────
 fig, ax = plt.subplots(figsize=(8, 4))
@@ -188,7 +188,7 @@ ax.set_title("Employee Count by Department and Gender")
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p5_11_sns_countplot.png", dpi=100)
 plt.show()
-print("✅ Plot 11: Count Plot saved.")
+print("Plot 11: Count Plot saved.")
 
 # ── Plot 12: Seaborn Heatmap (Correlation) ─────────────────────────────────
 fig, ax = plt.subplots(figsize=(6, 5))
@@ -199,4 +199,4 @@ ax.set_title("Correlation Matrix")
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p5_12_sns_heatmap.png", dpi=100)
 plt.show()
-print("✅ Plot 12: Heatmap saved.")
+print("Plot 12: Heatmap saved.")
