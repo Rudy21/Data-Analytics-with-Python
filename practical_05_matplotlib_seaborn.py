@@ -1,8 +1,3 @@
-"""
-Practical 5: Creating Basic Plots with Matplotlib and Seaborn
-POs: PO1, PO2, PO3, PO4, PO5 | KLs: K1, K2, K3, K4
-"""
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -205,5 +200,3 @@ plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p5_12_sns_heatmap.png", dpi=100)
 plt.show()
 print("✅ Plot 12: Heatmap saved.")
-
-print("\n✅ Practical 5 Complete! All 12 plots saved.")
