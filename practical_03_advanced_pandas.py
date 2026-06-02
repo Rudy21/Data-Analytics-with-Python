@@ -1,8 +1,3 @@
-"""
-Practical 3: Advanced Data Manipulation Exercises Using Pandas
-POs: PO1, PO2, PO3, PO4, PO5 | KLs: K1, K2, K3, K4, K5, K6
-"""
-
 import pandas as pd
 import numpy as np
 
@@ -169,4 +164,4 @@ print(pd.crosstab(df["Department"], df["Grade"]))
 
 # ── 15. Export ──────────────────────────────────────────────────────────────
 df.to_csv("/mnt/user-data/outputs/practical3_output.csv", index=False)
-print("\n✅ Practical 3 Complete! Output saved to practical3_output.csv")
+print("\nOutput saved to practical3_output.csv")
