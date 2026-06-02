@@ -243,4 +243,4 @@ if PLOTLY_AVAILABLE:
 else:
     print("Skipped Plotly plots (not installed).")
 
-print("\nPractical 6 Complete! All plots saved.")
+print("\nAll plots saved.")
