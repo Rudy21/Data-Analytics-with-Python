@@ -1,8 +1,3 @@
-"""
-Practical 9: Applying Statistical Analysis on a Dataset
-POs: PO1, PO2, PO3, PO4, PO5 | KLs: K1, K2, K3, K4
-"""
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -90,7 +85,7 @@ axes[2].set_title(f"Q-Q Plot – Age  (R²={r**2:.3f})")
 axes[2].set_xlabel("Theoretical"); axes[2].set_ylabel("Sample")
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p9_1_distributions.png", dpi=100); plt.show()
-print("✅ Distribution plots saved.")
+print("Distribution plots saved.")
 
 # ════════════════════════════════════════════════════════════
 # 3. HYPOTHESIS TESTING
@@ -106,7 +101,7 @@ def report_test(test_name, stat, p_val, h0, ha):
     print(f"  Ha: {ha}")
     print(f"  Statistic: {stat:.4f}  |  p-value: {p_val:.4f}")
     if p_val < alpha:
-        print(f"  → Reject H0 (p={p_val:.4f} < α={alpha}) ✅")
+        print(f"  → Reject H0 (p={p_val:.4f} < α={alpha})")
     else:
         print(f"  → Fail to Reject H0 (p={p_val:.4f} ≥ α={alpha})")
 
@@ -196,7 +191,7 @@ sns.heatmap(spearman_corr, annot=True, fmt=".2f", cmap="coolwarm", ax=axes[1])
 axes[1].set_title("Spearman Correlation")
 plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p9_2_correlation.png", dpi=100); plt.show()
-print("✅ Correlation heatmaps saved.")
+print("Correlation heatmaps saved.")
 
 # ════════════════════════════════════════════════════════════
 # 5. REGRESSION ANALYSIS
@@ -223,7 +218,7 @@ ax.set_xlabel("Age"); ax.set_ylabel("Fare")
 ax.set_title("Simple Linear Regression: Age → Fare")
 ax.legend(); plt.tight_layout()
 plt.savefig("/mnt/user-data/outputs/p9_3_regression.png", dpi=100); plt.show()
-print("✅ Regression plot saved.")
+print("Regression plot saved.")
 
 # ════════════════════════════════════════════════════════════
 # 6. CONFIDENCE INTERVALS
@@ -255,4 +250,4 @@ report_test("7b. Kruskal-Wallis (Fare across Classes)",
             "Same fare distribution across classes",
             "Fare distributions differ across classes")
 
-print("\n✅ Practical 9 Complete!")
+print("\nPractical 9 Complete!")
